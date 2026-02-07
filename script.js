@@ -1,9 +1,9 @@
 // EmailJS Configuration
 // Replace these with your actual EmailJS credentials
 const EMAILJS_CONFIG = {
-    serviceID: 'service_pfg97tj',
-    templateID: 'template_gov2oux',    
-    publicKey: 'alg84AK46Bvk1Yx4b'       
+    serviceID: 'YOUR_SERVICE_ID',      // Replace with your EmailJS Service ID
+    templateID: 'YOUR_TEMPLATE_ID',    // Replace with your EmailJS Template ID
+    publicKey: 'YOUR_PUBLIC_KEY'       // Replace with your EmailJS Public Key
 };
 
 // Initialize EmailJS
@@ -73,8 +73,9 @@ const body = document.body;
 // Check for saved theme preference or default to light mode
 const currentTheme = localStorage.getItem('theme') || 'light';
 if (currentTheme === 'dark') {
-    body.classList.remove('light-mode');
     body.classList.add('dark-mode');
+} else {
+    body.classList.add('light-mode');
 }
 
 themeToggle.addEventListener('click', () => {

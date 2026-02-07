@@ -132,16 +132,8 @@ nav {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: var(--accent);
-    letter-spacing: -0.5px;
 }
 
 nav ul {
@@ -749,6 +741,7 @@ body.dark-mode .theme-toggle .moon-icon {
 
     nav ul {
         gap: 1.5rem;
+        font-size: 0.9rem;
     }
 
     .section-title {
@@ -779,7 +772,12 @@ body.dark-mode .theme-toggle .moon-icon {
     }
 
     nav ul {
-        display: none;
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+
+    nav a {
+        font-size: 0.85rem;
     }
 
     .section-title {
