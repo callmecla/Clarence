@@ -339,6 +339,12 @@ section:nth-child(5) { animation-delay: 0.9s; }
     gap: 2rem;
 }
 
+.education-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .education-item {
     background: var(--card-bg);
     padding: 2.5rem;
@@ -348,6 +354,7 @@ section:nth-child(5) { animation-delay: 0.9s; }
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 15px var(--shadow);
+    cursor: pointer;
 }
 
 .education-item::before {

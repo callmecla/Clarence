@@ -1,16 +1,51 @@
-// Form submission handler
+// EmailJS Configuration
+// Replace these with your actual EmailJS credentials
+const EMAILJS_CONFIG = {
+    serviceID: 'YOUR_SERVICE_ID',      // Replace with your EmailJS Service ID
+    templateID: 'YOUR_TEMPLATE_ID',    // Replace with your EmailJS Template ID
+    publicKey: 'YOUR_PUBLIC_KEY'       // Replace with your EmailJS Public Key
+};
+
+// Initialize EmailJS
+(function() {
+    emailjs.init(EMAILJS_CONFIG.publicKey);
+})();
+
+// Form submission handler with EmailJS
 function handleSubmit(event) {
     event.preventDefault();
     
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    const submitBtn = event.target.querySelector('.submit-btn');
+    const originalBtnText = submitBtn.textContent;
     
-    // In a real implementation, you would send this data to a server
-    alert(`Thank you for your message, ${name}! I'll get back to you soon at ${email}.`);
+    // Disable button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
     
-    // Reset form
-    event.target.reset();
+    // Get form data
+    const templateParams = {
+        from_name: document.getElementById('name').value,
+        from_email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+        to_name: 'Clarence Kyle M. Flores'
+    };
+    
+    // Send email using EmailJS
+    emailjs.send(EMAILJS_CONFIG.serviceID, EMAILJS_CONFIG.templateID, templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert(`Thank you for your message, ${templateParams.from_name}! I'll get back to you soon at ${templateParams.from_email}.`);
+            // Reset form
+            event.target.reset();
+        }, function(error) {
+            console.error('FAILED...', error);
+            alert('Oops! Something went wrong. Please try again or email me directly at flores.clarencekyle.marcrispin@gmail.com');
+        })
+        .finally(function() {
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+        });
 }
 
 // Smooth scrolling for navigation links
