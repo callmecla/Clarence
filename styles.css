@@ -544,6 +544,102 @@ section:nth-child(5) { animation-delay: 0.9s; }
     font-size: 1.2rem;
 }
 
+/* Certifications */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.certificate-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.certificate-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px var(--shadow);
+    border-color: var(--accent);
+}
+
+.certificate-image-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.certificate-card:hover .certificate-image-placeholder {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-warm) 100%);
+}
+
+.certificate-image-placeholder svg {
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.certificate-card:hover .certificate-image-placeholder svg {
+    color: white;
+    transform: scale(1.1);
+}
+
+.certificate-image-placeholder p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.certificate-card:hover .certificate-image-placeholder p {
+    color: white;
+}
+
+/* When you add actual certificate images, use this: */
+.certificate-image {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.certificate-card:hover .certificate-image {
+    transform: scale(1.05);
+}
+
+.certificate-info {
+    padding: 1.5rem;
+}
+
+.certificate-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.cert-issuer {
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.cert-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
 /* Contact Form - Wider and less compressed */
 .contact-form {
     max-width: 900px;
