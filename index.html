@@ -3,15 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clarence Kyle M. Flores - Portfolio</title>
+    <title>Clarence Kyle M. Flores - IT Professional & Web Developer Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Clarence Kyle M. Flores - IT Professional & Developer specializing in web development, UI/UX design, and IT support. BSIT graduate from Quezon City University.">
+    <meta name="keywords" content="IT Professional, Web Developer, UI/UX Designer, Philippines, Quezon City University, Portfolio, HTML, CSS, JavaScript, Python">
+    <meta name="author" content="Clarence Kyle M. Flores">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="Clarence Kyle M. Flores - Portfolio">
+    <meta property="og:description" content="IT Professional & Developer specializing in web development and UI/UX design">
+    <meta property="og:image" content="image.png">
+    <meta property="og:url" content="https://your-portfolio.vercel.app">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Clarence Kyle M. Flores - Portfolio">
+    <meta name="twitter:description" content="IT Professional & Developer Portfolio">
+    <meta name="twitter:image" content="image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-enhanced.css">
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+    
     <div class="bg-shapes">
         <div class="shape"></div>
         <div class="shape"></div>
@@ -24,6 +50,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -36,27 +63,44 @@
             <div class="hero-content">
                 <h1>Clarence Kyle M. Flores</h1>
                 <p class="subtitle">IT Professional & Developer</p>
-                <p>Bachelor of Science in Information Technology graduate with hands-on experience in IT support, document management systems, and web development. Passionate about leveraging technology to solve real-world problems.</p>
+                <p class="hero-description">Passionate about leveraging technology to solve real-world problems. As a Bachelor of Science in Information Technology graduate, I specialize in web development, UI/UX design, and IT support. I believe in continuous learning and staying ahead in the ever-evolving tech landscape.</p>
+                
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="resume.pdf" download class="btn btn-secondary">Download Resume</a>
+                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                </div>
                 
                 <div class="contact-info">
-                    <a href="/cdn-cgi/l/email-protection#395f55564b5c4a175a55584b5c575a5c5240555c1754584b5a4b504a495057795e54585055175a5654">
-                        📧 <span class="__cf_email__" data-cfemail="73151f1c0116005d101f1201161d1016180a1f165d1e120110011a00031a1d33141e121a1f5d101c1e">[email&#160;protected]</span>
+                    <a href="mailto:flores.clarencekyle.marcrispin@gmail.com">
+                        📧 flores.clarencekyle.marcrispin@gmail.com
                     </a>
                     <a href="tel:09281008761">
                         📱 0928 1008 761
                     </a>
-                    <a href="https://linkedin.com/in/clarenceofloresi" target="_blank">
+                    <a href="https://linkedin.com/in/clarenceofloresi" target="_blank" rel="noopener noreferrer">
                         💼 linkedin.com/in/clarenceofloresi
                     </a>
                     <a>
                         📍 23 Katulagan Street, Barangay Gulod, Quezon City, Metro Manila 1117
                     </a>
                 </div>
+
+                <!-- Currently Learning Section -->
+                <div class="currently-learning">
+                    <h3>🎯 Currently Learning</h3>
+                    <div class="learning-tags">
+                        <span class="tag">React.js</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Cloud Computing</span>
+                        <span class="tag">Advanced JavaScript</span>
+                    </div>
+                </div>
             </div>
             
             <div class="hero-image">
                 <div class="image-wrapper">
-                    <img src="/mnt/user-data/uploads/1770426713349_image.png" alt="Clarence Kyle M. Flores">
+                    <img src="image.png" alt="Clarence Kyle M. Flores">
                 </div>
             </div>
         </section>
@@ -97,57 +141,227 @@
                     <h3>Department of Education</h3>
                     <p class="position">IT Intern</p>
                     <p class="date">September 2025 - November 2025</p>
-                    <p>Provided basic IT support and assisted with document management systems, operated and digitized office records to improve retrieval efficiency, and Assisted staff with technical and automation tasks.</p>
+                    <p>Provided basic IT support and assisted with document management systems. Digitized 500+ office records to improve retrieval efficiency by 40%. Assisted staff with technical and automation tasks, streamlining daily operations.</p>
                 </div>
             </a>
         </section>
 
+        <!-- PROJECTS SECTION -->
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 - Placeholder -->
+                <div class="project-card">
+                    <div class="project-image-placeholder">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                        <p>Project Screenshot</p>
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Name</h3>
+                        <p class="project-description">Brief description of your project. What problem does it solve? What technologies did you use?</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/YOUR_USERNAME/project" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="https://live-demo.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 - Placeholder -->
+                <div class="project-card">
+                    <div class="project-image-placeholder">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                        <p>Project Screenshot</p>
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Name</h3>
+                        <p class="project-description">Brief description of your project. What problem does it solve? What technologies did you use?</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/YOUR_USERNAME/project" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="https://live-demo.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 - Placeholder -->
+                <div class="project-card">
+                    <div class="project-image-placeholder">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                        <p>Project Screenshot</p>
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Name</h3>
+                        <p class="project-description">Brief description of your project. What problem does it solve? What technologies did you use?</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/YOUR_USERNAME/project" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="https://live-demo.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="seminars">
-            <h2 class="section-title">Seminars Attended</h2>
+            <h2 class="section-title">Professional Development</h2>
             <div class="seminars-grid">
                 <div class="seminar-card">
                     <h3>Masterclass on Alibaba Cloud System</h3>
                     <p class="year">2025</p>
+                    <p class="seminar-learning">Key Skills: Cloud infrastructure, scalability, deployment strategies</p>
                 </div>
                 
                 <div class="seminar-card">
                     <h3>Foundation Course on Intellectual Property</h3>
                     <p class="year">2025</p>
+                    <p class="seminar-learning">Key Skills: IP rights, patents, copyright law for tech professionals</p>
                 </div>
                 
                 <div class="seminar-card">
                     <h3>She++ Empowerment Program in Tech/PhilDev</h3>
                     <p class="year">2025</p>
+                    <p class="seminar-learning">Key Skills: Leadership, diversity in tech, professional development</p>
                 </div>
             </div>
         </section>
 
         <section id="skills">
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Design</h3>
-                    <ul>
-                        <li>Figma</li>
-                        <li>Adobe XD</li>
-                        <li>Web & UI/UX Design</li>
-                    </ul>
+                    <h3>Frontend Development</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>HTML & CSS</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>JavaScript</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>Development</h3>
-                    <ul>
-                        <li>HTML, CSS, JavaScript</li>
-                        <li>Basic Python and C#</li>
-                    </ul>
+                    <h3>Backend & Programming</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Python</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>C#</span>
+                            <span class="skill-level">Basic</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 45%"></div>
+                        </div>
+                    </div>
                 </div>
                 
+                <div class="skill-category">
+                    <h3>Design & Tools</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Figma</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Adobe XD</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="skill-category">
                     <h3>Other Skills</h3>
-                    <ul>
-                        <li>Research Writing</li>
-                        <li>Proofreading</li>
+                    <ul class="skill-list">
+                        <li>Research Writing & Documentation</li>
+                        <li>Proofreading & Quality Assurance</li>
                         <li>Project Management</li>
+                        <li>IT Support & Troubleshooting</li>
                     </ul>
                 </div>
             </div>
@@ -285,4 +499,12 @@
 
     <!-- Scroll to Top Button -->
     <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="n
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+        <span class="scroll-top-text">Top</span>
+    </button>
+
+    <script src="script-enhanced.js"></script>
+</body>
+</html>
