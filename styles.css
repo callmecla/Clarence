@@ -1050,3 +1050,78 @@ body.dark-mode .theme-toggle .moon-icon {
         right: 20px;
     }
 }
+
+/* ============================================
+   FIXES FOR DOWNLOAD BUTTON AND IMAGE
+   ============================================ */
+
+/* Better Download Button Styling */
+.btn-resume {
+    background: var(--accent);
+    color: white;
+    border: 2px solid var(--accent);
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-resume:hover {
+    background: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
+}
+
+body.dark-mode .btn-resume:hover {
+    background: transparent;
+    color: var(--accent);
+}
+
+/* Fix Image Border for Both Modes */
+.image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--accent);
+    border-radius: 8px;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.image-wrapper:hover::before {
+    top: 10px;
+    right: 10px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+/* Ensure image looks good in both modes */
+body:not(.dark-mode) .image-wrapper img {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .image-wrapper img {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Better spacing for hero CTA */
+.hero-cta {
+    display: inline-block;
+    margin: 2rem 0;
+}
+
