@@ -1797,3 +1797,188 @@ section {
     }
 }
 
+
+/* ============================================
+   FIX: LARGER IMAGE & LIGHT MODE VISIBILITY
+   ============================================ */
+
+/* MUCH LARGER IMAGE */
+.image-wrapper {
+    max-width: 450px !important; /* Force larger size */
+    width: 100%;
+    min-width: 350px; /* Minimum size */
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    min-height: 450px;
+    object-fit: cover;
+}
+
+/* Desktop - Even Larger */
+@media (min-width: 969px) {
+    .image-wrapper {
+        max-width: 500px !important;
+        min-width: 400px;
+    }
+    
+    .image-wrapper img {
+        min-height: 500px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .image-wrapper {
+        max-width: 550px !important;
+        min-width: 450px;
+    }
+    
+    .image-wrapper img {
+        min-height: 550px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .image-wrapper {
+        max-width: 600px !important;
+        min-width: 500px;
+    }
+    
+    .image-wrapper img {
+        min-height: 600px;
+    }
+}
+
+/* FIX LIGHT MODE CARD VISIBILITY */
+
+/* Light mode - Better contrast */
+body:not(.dark-mode) {
+    --card-bg: #ffffff;
+    --border-color: rgba(99, 102, 241, 0.25);
+    --shadow: rgba(0, 0, 0, 0.12);
+}
+
+/* All cards - Better visibility in light mode */
+body:not(.dark-mode) .education-item,
+body:not(.dark-mode) .experience-item,
+body:not(.dark-mode) .project-card,
+body:not(.dark-mode) .seminar-card,
+body:not(.dark-mode) .certificate-card,
+body:not(.dark-mode) .skill-category,
+body:not(.dark-mode) .currently-learning {
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Hover state in light mode */
+body:not(.dark-mode) .education-item:hover,
+body:not(.dark-mode) .experience-item:hover,
+body:not(.dark-mode) .project-card:hover,
+body:not(.dark-mode) .seminar-card:hover,
+body:not(.dark-mode) .certificate-card:hover,
+body:not(.dark-mode) .skill-category:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent);
+}
+
+/* Currently Learning box in light mode */
+body:not(.dark-mode) .currently-learning {
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-left: 5px solid var(--accent);
+}
+
+/* Contact form in light mode */
+body:not(.dark-mode) .contact-form {
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Form inputs in light mode */
+body:not(.dark-mode) .form-group input,
+body:not(.dark-mode) .form-group textarea {
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+}
+
+body:not(.dark-mode) .form-group input:focus,
+body:not(.dark-mode) .form-group textarea:focus {
+    background: #ffffff;
+    border-color: var(--accent);
+}
+
+/* Footer in light mode */
+body:not(.dark-mode) footer {
+    background: #f9fafb;
+    border-top: 2px solid #e5e7eb;
+}
+
+/* Better text contrast in light mode */
+body:not(.dark-mode) .hero-description,
+body:not(.dark-mode) .project-description,
+body:not(.dark-mode) .experience-item p,
+body:not(.dark-mode) .seminar-learning {
+    color: #4b5563;
+}
+
+/* Section backgrounds for better contrast */
+body:not(.dark-mode) #education,
+body:not(.dark-mode) #experience,
+body:not(.dark-mode) #projects,
+body:not(.dark-mode) #seminars,
+body:not(.dark-mode) #skills,
+body:not(.dark-mode) #certifications {
+    background: transparent;
+}
+
+/* Better shadows for depth */
+body:not(.dark-mode) .education-item,
+body:not(.dark-mode) .project-card {
+    box-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Image border more visible in light mode */
+body:not(.dark-mode) .image-wrapper::before {
+    border-color: var(--accent);
+    border-width: 3px;
+}
+
+body:not(.dark-mode) .image-wrapper img {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Tags more visible in light mode */
+body:not(.dark-mode) .tag,
+body:not(.dark-mode) .tech-tag {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+/* Better button contrast */
+body:not(.dark-mode) .btn-resume {
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+body:not(.dark-mode) .btn-resume:hover {
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+}
+
+/* Scroll buttons more visible */
+body:not(.dark-mode) .theme-toggle,
+body:not(.dark-mode) .scroll-top {
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+    border: 2px solid #e5e7eb;
+}
+
+/* Project placeholder more visible */
+body:not(.dark-mode) .project-image-placeholder,
+body:not(.dark-mode) .certificate-image-placeholder {
+    opacity: 1;
+}
+
