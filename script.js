@@ -1,8 +1,9 @@
 // EmailJS Configuration
+// Replace these with your actual EmailJS credentials
 const EMAILJS_CONFIG = {
-    serviceID: 'service_wg7jkbe',      
-    templateID: 'template_c69ox88',    
-    publicKey: 'alg84AK46Bvk1Yx4b'       
+    serviceID: 'YOUR_SERVICE_ID',      // Replace with your EmailJS Service ID
+    templateID: 'YOUR_TEMPLATE_ID',    // Replace with your EmailJS Template ID
+    publicKey: 'YOUR_PUBLIC_KEY'       // Replace with your EmailJS Public Key
 };
 
 // Initialize EmailJS
@@ -98,9 +99,6 @@ window.addEventListener('scroll', () => {
     } else {
         scrollTopBtn.classList.remove('visible');
     }
-    
-    // Update scroll progress indicator
-    updateScrollProgress();
 });
 
 scrollTopBtn.addEventListener('click', () => {
@@ -109,14 +107,6 @@ scrollTopBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
-
-// Scroll Progress Indicator
-function updateScrollProgress() {
-    const scrollProgress = document.getElementById('scroll-progress');
-    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (window.pageYOffset / windowHeight) * 100;
-    scrollProgress.style.width = scrolled + '%';
-}
 
 // Add animation on scroll
 const observerOptions = {
@@ -140,215 +130,290 @@ document.querySelectorAll('section').forEach(section => {
     section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(section);
 });
+// ============================================
+// MICRO-INTERACTIONS ENHANCEMENTS
+// ============================================
 
-// Certificate Image Modal (Click to Enlarge)
-document.addEventListener('DOMContentLoaded', () => {
-    // Add click handlers for certificate images when they're added
-    document.querySelectorAll('.certificate-image').forEach(img => {
-        img.addEventListener('click', function() {
-            // Create modal overlay
-            const modal = document.createElement('div');
-            modal.className = 'cert-modal';
-            
-            // Create enlarged image
-            const enlargedImg = document.createElement('img');
-            enlargedImg.src = this.src;
-            enlargedImg.alt = this.alt;
-            
-            modal.appendChild(enlargedImg);
-            document.body.appendChild(modal);
-            
-            // Close on click
-            modal.addEventListener('click', function() {
-                document.body.removeChild(modal);
-            });
-        });
+// Add ripple effect to buttons dynamically
+document.querySelectorAll('.btn-resume, .submit-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple-effect');
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => ripple.remove(), 600);
     });
 });
 
-// Project Image Modal (Click to Enlarge)
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.project-image').forEach(img => {
-        img.addEventListener('click', function(e) {
-            e.stopPropagation();
-            
-            const modal = document.createElement('div');
-            modal.className = 'cert-modal';
-            
-            const enlargedImg = document.createElement('img');
-            enlargedImg.src = this.src;
-            enlargedImg.alt = this.alt;
-            
-            modal.appendChild(enlargedImg);
-            document.body.appendChild(modal);
-            
-            modal.addEventListener('click', function() {
-                document.body.removeChild(modal);
-            });
-        });
-    });
-});
-
-// ============================================
-// EASTER EGG: Konami Code
-// ============================================
-const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-let konamiIndex = 0;
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === konamiCode[konamiIndex]) {
-        konamiIndex++;
-        if (konamiIndex === konamiCode.length) {
-            activateKonamiCode();
-            konamiIndex = 0;
-        }
-    } else {
-        konamiIndex = 0;
+// Add CSS for ripple effect dynamically
+const style = document.createElement('style');
+style.textContent = `
+    .ripple-effect {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple-animation 0.6s ease-out;
+        pointer-events: none;
     }
-});
-
-function activateKonamiCode() {
-    // Add rainbow effect
-    document.body.classList.add('konami-active');
     
-    // Show message
-    const message = document.createElement('div');
-    message.className = 'konami-message';
-    message.textContent = '🎉 You found the secret! 🎉';
-    document.body.appendChild(message);
-    
-    // Remove after 3 seconds
-    setTimeout(() => {
-        document.body.removeChild(message);
-        document.body.classList.remove('konami-active');
-    }, 3000);
-    
-    console.log('🎮 Konami Code Activated! You are a true gamer! 🎮');
-}
+    @keyframes ripple-animation {
+        to {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
 
-// ============================================
-// Console Easter Egg Message
-// ============================================
-console.log('%c👋 Hey there, curious developer!', 'color: #64FFDA; font-size: 20px; font-weight: bold;');
-console.log('%cWelcome to my portfolio! I see you\'re checking out the console 🔍', 'color: #FFB86C; font-size: 14px;');
-console.log('%c💡 Try the Konami Code: ↑ ↑ ↓ ↓ ← → ← → B A', 'color: #64FFDA; font-size: 12px;');
-console.log('%c📧 Want to connect? Email me at flores.clarencekyle.marcrispin@gmail.com', 'color: #8892B0; font-size: 12px;');
-console.log('%c⭐ Built with HTML, CSS, and vanilla JavaScript - no frameworks!', 'color: #E6F1FF; font-size: 11px;');
-
-// ============================================
-// Skill Bar Animation on Scroll
-// ============================================
-const skillBars = document.querySelectorAll('.skill-progress');
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.width = entry.target.getAttribute('style').match(/width:\s*(\d+%)/)[1];
+// Smooth reveal for cards on scroll with stagger effect
+const revealCards = () => {
+    const cards = document.querySelectorAll('.education-item, .project-card, .skill-category, .seminar-card, .certificate-card');
+    
+    cards.forEach((card, index) => {
+        const cardTop = card.getBoundingClientRect().top;
+        const triggerBottom = window.innerHeight * 0.85;
+        
+        if (cardTop < triggerBottom) {
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 100); // Stagger by 100ms
         }
     });
-}, { threshold: 0.5 });
+};
 
-skillBars.forEach(bar => {
-    skillObserver.observe(bar);
+// Initialize cards as hidden
+document.querySelectorAll('.education-item, .project-card, .skill-category, .seminar-card, .certificate-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
 });
 
-// ============================================
-// Typing Effect for Hero Subtitle (Optional Enhancement)
-// ============================================
-// Uncomment this section if you want a typing effect on the subtitle
-/*
-const subtitle = document.querySelector('.subtitle');
-const subtitleText = subtitle.textContent;
-subtitle.textContent = '';
-let charIndex = 0;
+window.addEventListener('scroll', revealCards);
+window.addEventListener('load', revealCards);
 
-function typeWriter() {
-    if (charIndex < subtitleText.length) {
-        subtitle.textContent += subtitleText.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeWriter, 100);
+// Add hover sound effect (optional - subtle)
+const addHoverEffect = (selector) => {
+    document.querySelectorAll(selector).forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            element.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            element.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+};
+
+// Apply to all cards
+addHoverEffect('.education-item');
+addHoverEffect('.experience-item');
+addHoverEffect('.project-card');
+addHoverEffect('.seminar-card');
+addHoverEffect('.certificate-card');
+
+// ============================================
+// MOBILE IMPROVEMENTS
+// ============================================
+
+// Detect mobile device
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+if (isMobile || isTouch) {
+    // Add mobile-specific class
+    document.body.classList.add('is-mobile');
+    
+    // Disable hover effects on touch devices
+    const style = document.createElement('style');
+    style.textContent = `
+        .is-mobile * {
+            transition-duration: 0.2s !important;
+        }
+        
+        .is-mobile .education-item:hover,
+        .is-mobile .experience-item:hover,
+        .is-mobile .project-card:hover {
+            transform: translateY(-4px) scale(1.01) !important;
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Better scroll behavior on mobile
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Hide header on scroll down, show on scroll up
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
+        
+        lastScrollTop = scrollTop;
+    }, false);
+    
+    header.style.transition = 'transform 0.3s ease';
+}
+
+// Improve touch feedback
+if (isTouch) {
+    document.querySelectorAll('a, button, .project-card, .education-item, .experience-item').forEach(element => {
+        element.addEventListener('touchstart', function() {
+            this.style.opacity = '0.7';
+        });
+        
+        element.addEventListener('touchend', function() {
+            setTimeout(() => {
+                this.style.opacity = '1';
+            }, 100);
+        });
+    });
+}
+
+// Prevent zoom on input focus (iOS)
+if (isMobile) {
+    document.querySelectorAll('input, textarea').forEach(input => {
+        input.addEventListener('focus', () => {
+            if (window.innerWidth < 768) {
+                const viewport = document.querySelector('meta[name=viewport]');
+                viewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1');
+            }
+        });
+        
+        input.addEventListener('blur', () => {
+            const viewport = document.querySelector('meta[name=viewport]');
+            viewport.setAttribute('content', 'width=device-width, initial-scale=1');
+        });
+    });
+}
+
+// Add pull-to-refresh indicator (optional)
+let touchStartY = 0;
+let touchEndY = 0;
+
+document.addEventListener('touchstart', e => {
+    touchStartY = e.changedTouches[0].screenY;
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+    const swipeDistance = touchEndY - touchStartY;
+    
+    // Swipe down at top of page
+    if (swipeDistance > 100 && window.scrollY === 0) {
+        // Optional: Add refresh animation
+        console.log('Pull to refresh triggered');
     }
 }
 
-// Start typing effect after page load
-window.addEventListener('load', () => {
-    setTimeout(typeWriter, 500);
-});
-*/
+// ============================================
+// TYPOGRAPHY IMPROVEMENTS
+// ============================================
 
-// ============================================
-// Analytics Event Tracking (Google Analytics Ready)
-// ============================================
-// Track button clicks
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-        const btnText = this.textContent.trim();
-        console.log(`Button clicked: ${btnText}`);
-        
-        // If you have Google Analytics, uncomment below:
-        // gtag('event', 'button_click', {
-        //     'event_category': 'engagement',
-        //     'event_label': btnText
-        // });
-    });
-});
-
-// Track project link clicks
-document.querySelectorAll('.project-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        const linkText = this.textContent.trim();
-        console.log(`Project link clicked: ${linkText}`);
-        
-        // If you have Google Analytics, uncomment below:
-        // gtag('event', 'project_link_click', {
-        //     'event_category': 'projects',
-        //     'event_label': linkText
-        // });
-    });
-});
-
-// ============================================
-// Performance: Lazy Load Images (When Added)
-// ============================================
-// This will automatically lazy load images for better performance
-if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-        img.src = img.dataset.src;
-    });
-} else {
-    // Fallback for browsers that don't support lazy loading
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-    document.body.appendChild(script);
-}
-
-// ============================================
-// Initialize Everything on DOM Load
-// ============================================
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('✅ Portfolio loaded successfully!');
+// Adjust font size based on content length
+const adjustFontSize = () => {
+    const descriptions = document.querySelectorAll('.project-description, .hero-description');
     
-    // Add any initialization code here
-    updateScrollProgress();
-    
-    // Animate skill bars when they come into view
-    const skillSection = document.querySelector('#skills');
-    if (skillSection) {
-        const skillSectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    document.querySelectorAll('.skill-progress').forEach(bar => {
-                        const width = bar.style.width;
-                        bar.style.width = '0%';
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, 100);
-                    });
-                    skillSectionObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.3 });
+    descriptions.forEach(desc => {
+        const textLength = desc.textContent.length;
         
-        skillSectionObserver.observe(skillSection);
+        if (textLength > 200) {
+            desc.style.fontSize = '0.95rem';
+            desc.style.lineHeight = '1.7';
+        }
+    });
+};
+
+adjustFontSize();
+
+// Prevent orphans (single words on last line)
+const preventOrphans = (selector) => {
+    document.querySelectorAll(selector).forEach(element => {
+        const text = element.innerHTML;
+        const words = text.trim().split(' ');
+        
+        if (words.length > 3) {
+            words[words.length - 2] += '&nbsp;' + words[words.length - 1];
+            words.pop();
+            element.innerHTML = words.join(' ');
+        }
+    });
+};
+
+// Apply to headings
+preventOrphans('h1, h2, h3');
+
+// Add reading time estimate
+const calculateReadingTime = () => {
+    const sections = document.querySelectorAll('section');
+    let totalWords = 0;
+    
+    sections.forEach(section => {
+        const text = section.textContent;
+        const words = text.trim().split(/\s+/).length;
+        totalWords += words;
+    });
+    
+    const readingTime = Math.ceil(totalWords / 200); // Average reading speed
+    console.log(`📖 Estimated reading time: ${readingTime} minutes`);
+};
+
+calculateReadingTime();
+
+// ============================================
+// PERFORMANCE IMPROVEMENTS
+// ============================================
+
+// Lazy load images when they come into view
+const lazyLoadImages = () => {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+};
+
+lazyLoadImages();
+
+// Preload critical resources
+const preloadCriticalImages = () => {
+    const profileImage = document.querySelector('.hero-image img');
+    if (profileImage) {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = profileImage.src;
+        document.head.appendChild(link);
     }
-});
+};
+
+preloadCriticalImages();
+
+console.log('✨ Micro-interactions, typography, and mobile improvements loaded!');
