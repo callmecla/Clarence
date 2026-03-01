@@ -1623,3 +1623,177 @@ body {
     }
 }
 
+
+/* ============================================
+   FIX: DESKTOP LAYOUT & IMAGE SIZE
+   ============================================ */
+
+/* Better Hero Layout on Desktop */
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* More space for content */
+    gap: 6rem;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+/* Better Content Alignment */
+.hero-content {
+    max-width: 650px;
+}
+
+/* Larger Image on Desktop */
+.image-wrapper {
+    max-width: 500px; /* Increased from 400px */
+    width: 100%;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4; /* Better aspect ratio */
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Better Hero Description */
+.hero-description {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+}
+
+/* Better Contact Info Layout */
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    max-width: 550px;
+}
+
+.contact-info a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+}
+
+/* Better Currently Learning Box */
+.currently-learning {
+    max-width: 550px;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    border-left: 5px solid var(--accent);
+}
+
+.currently-learning h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Better spacing for sections */
+section {
+    margin-bottom: 10rem;
+    padding: 0 2rem;
+}
+
+/* Larger viewport optimization */
+@media (min-width: 1200px) {
+    .hero {
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 8rem;
+        padding: 6rem 0;
+    }
+    
+    .image-wrapper {
+        max-width: 550px;
+    }
+    
+    .hero-content {
+        max-width: 700px;
+    }
+    
+    .hero-description {
+        font-size: 1.2rem;
+        max-width: 650px;
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1600px) {
+    .hero {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 10rem;
+    }
+    
+    .image-wrapper {
+        max-width: 600px;
+    }
+}
+
+/* Medium desktop fix */
+@media (min-width: 969px) and (max-width: 1199px) {
+    .hero {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4rem;
+    }
+    
+    .image-wrapper {
+        max-width: 450px;
+    }
+    
+    .hero-content {
+        max-width: 550px;
+    }
+}
+
+/* Better image border on desktop */
+@media (min-width: 969px) {
+    .image-wrapper::before {
+        top: 25px;
+        right: 25px;
+        border-width: 4px;
+    }
+    
+    .image-wrapper:hover::before {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* Fix for centered content on desktop */
+@media (min-width: 969px) {
+    .hero-content {
+        text-align: left;
+    }
+    
+    .hero-cta {
+        margin: 2rem 0;
+    }
+}
+
+/* Better button size on desktop */
+@media (min-width: 969px) {
+    .btn-resume {
+        padding: 1rem 2.5rem;
+        font-size: 1.05rem;
+        min-width: 200px;
+    }
+}
+
+/* Fix navigation spacing */
+@media (min-width: 969px) {
+    nav ul {
+        gap: 3rem;
+    }
+    
+    nav a {
+        font-size: 1rem;
+    }
+}
+
