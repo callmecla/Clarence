@@ -2587,3 +2587,84 @@ body.dark-mode .hero-content h1 {
     justify-content: center;
 }
 
+
+/* ============================================
+   FIX: NAME ONE LINE, SMALLER IMAGE, HIGHER POSITION
+   ============================================ */
+
+/* Name on ONE line */
+.hero-content h1 {
+    font-size: 3.2rem !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+}
+
+/* Smaller image */
+.image-wrapper {
+    max-width: 420px !important;
+}
+
+.image-wrapper img {
+    max-height: 520px;
+}
+
+/* Position image higher */
+.hero-image {
+    align-items: flex-start;
+    padding-top: 2rem;
+}
+
+/* Responsive - keep one line on desktop */
+@media (min-width: 1400px) {
+    .hero-content h1 {
+        font-size: 3.5rem !important;
+    }
+    
+    .image-wrapper {
+        max-width: 450px !important;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .hero-content h1 {
+        font-size: 3.2rem !important;
+    }
+    
+    .image-wrapper {
+        max-width: 420px !important;
+    }
+}
+
+@media (min-width: 969px) and (max-width: 1199px) {
+    .hero-content h1 {
+        font-size: 2.8rem !important;
+    }
+    
+    .image-wrapper {
+        max-width: 380px !important;
+    }
+}
+
+/* Mobile - allow wrapping */
+@media (max-width: 968px) {
+    .hero-content h1 {
+        white-space: normal !important;
+        font-size: 2.5rem !important;
+    }
+    
+    .hero-image {
+        align-items: center;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-content h1 {
+        font-size: 2rem !important;
+    }
+    
+    .image-wrapper {
+        max-width: 300px !important;
+    }
+}
+
