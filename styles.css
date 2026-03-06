@@ -2668,3 +2668,27 @@ body.dark-mode .hero-content h1 {
     }
 }
 
+
+/* ============================================
+   REMOVE IMAGE 3D ANIMATION
+   ============================================ */
+
+/* Remove 3D rotation effect */
+.image-wrapper {
+    transition: all 0.3s ease !important;
+}
+
+.image-wrapper:hover {
+    transform: none !important;
+}
+
+/* Keep simple lift effect only */
+.image-wrapper:hover {
+    transform: translateY(-5px) !important;
+}
+
+/* Remove any perspective effects */
+.image-wrapper {
+    perspective: none !important;
+}
+
